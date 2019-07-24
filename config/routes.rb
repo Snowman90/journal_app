@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get 'home', to: 'home#show'
 
   root to: 'home#show'
+
+  resources :posts
 end
