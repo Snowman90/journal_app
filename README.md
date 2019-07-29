@@ -4,6 +4,6 @@ Simple journal app for travelers.
 
 TODO:
 - [ ] Add pagination
-- [ ] Add creating new posts with ajax
-- [ ] Add editing posts with ajax
+- [ ] Creating new posts with ajax
+- [ ] Editing posts with ajax
 - [ ] Tests for Third-party API
