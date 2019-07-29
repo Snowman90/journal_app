@@ -37,4 +37,13 @@ $(function(){
     }
     return false;
   })
+
+  $('.truncate').on('click', function(event) {
+    if($(event.target).closest('a').hasClass("text-truncate")) {
+      $(event.target).closest('a').removeClass("text-truncate");
+    }
+    else {
+      $(event.target).closest('a').addClass("text-truncate");
+    }
+  })
 })

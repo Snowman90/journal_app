@@ -26,7 +26,7 @@
 
 .table-title {
   font-family: 'Indie Flower', cursive;
-  float: center
+  float: center;
 }
 
 .btn-edit { 
@@ -43,4 +43,12 @@
 
 .margin {
   margin-top: 25px;
+}
+
+.text-truncate {
+  display: inline-block;
+  max-width: 36em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

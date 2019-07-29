@@ -30,9 +30,9 @@
             <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you certain you want to delete this?' }, class: 'btn btn-outline-danger btn-sm js-delete-link' %>
           </th>
         </tr>
-        <tr>
+        <tr class="truncate">
           <td colspan="2">
-            <%= post.note %>
+            <a class="text-truncate"><%= post.note %></a>
           </td>
         </tr>
       </tbody>
