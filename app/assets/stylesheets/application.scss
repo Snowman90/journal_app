@@ -10,6 +10,33 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+ // Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+.table-header {
+  background-color: lightgrey;
+  font-size: 120%;
+  vertical-align: baseline; 
+  white-space: nowrap;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+} 
+
+.table-title {
+  font-family: 'Indie Flower', cursive;
+  float: center
+}
+
+.btn-edit { 
+  float: right;
+}
+
+.jumbotron {
+  margin-top: 45px;
+}
+
+.margin {
+  margin-top: 25px;
+}
