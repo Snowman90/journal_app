@@ -1,2 +1,18 @@
-<h1> Welcome, please login to continue </h1>
-<a href="/auth/google_oauth2">Sign in with Google</a>
+<div class="jumbotron col-md-6 offset-md-3" align="center">
+  <% if user_signed_in? %>
+    <h1>Welcome <%= @name %> !</h1>
+  <% else %>
+    <h1>Welcome traveller!</h1>
+  <% end %>
+  <% if user_signed_in? %>
+    <h2>Add post to your journal</h2>
+    <div class="margin">
+      <%= link_to 'Your journal', posts_path, class: 'btn btn-info' %>
+    </div>
+  <% else %>
+    <h2>Please login to continue</h2>
+    <div class="margin">
+      <%= link_to 'Sign in with Google', login_path, class: 'btn btn-info' %>
+    </div>
+  <% end %>
+</div>
