@@ -1,1 +1,43 @@
-<h1>Hurra jestes w indexie postow</h1>
+<%= form_for @form, url: posts_path do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="col-md-6 offset-md-3 margin">
+    <h2>Create Post</h2>
+    <div class="form-group">
+      <%= f.text_field :city_name, placeholder: 'City', class: 'form-control'%>
+    </div>
+    <div class="form-group">
+      <%= f.text_area :note, placeholder: 'Note', class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.submit 'Save', class: 'btn btn-primary btn-block' %>
+    </div>
+  </div>
+<% end %>
+
+
+<div class="col-md-6 offset-md-3">
+  <h2>Older posts</h2>
+  <table class="table">
+    <% @posts.each do |post| %>
+      <tbody>
+        <tr class="table-header">
+          <th class="table-title">
+            <%= post.created_at.strftime("%d-%m-%Y") %>
+            <%= post.city.name %>
+            <%= post.city.weather.temperature %>&#176C
+          </th>
+          <th class="btn-edit">
+            <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-outline-success btn-sm' %>
+            <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you certain you want to delete this?' },
+            class: 'btn btn-outline-danger btn-sm js-delete-link' %>
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <%= post.note %>
+          </td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+</div>
