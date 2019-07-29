@@ -18,32 +18,37 @@
 //= require popper
 //= require bootstrap-sprockets
 
-$(function(){
-  $('.js-delete-link').on('click', function(event) {
-    event.preventDefault();
-    event.stopPropagation();
 
-    if(confirm('Are you sure?')) {
-      var url = $(event.target).attr('href')
-      $.ajax({
-        method: "DELETE",
-        dataType: 'json',
-        beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-        url: url
-      })
-      .done(function(  ) {
-        $(event.target).closest('tbody').remove();
-      })
-    }
-    return false;
-  })
-
-  $('.truncate').on('click', function(event) {
-    if($(event.target).closest('a').hasClass("text-truncate")) {
-      $(event.target).closest('a').removeClass("text-truncate");
-    }
-    else {
-      $(event.target).closest('a').addClass("text-truncate");
-    }
+document.addEventListener("turbolinks:load", function() {
+  $(function(){
+    $('.js-delete-link').on('click', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+  
+      if(confirm('Are you sure?')) {
+        var url = $(event.target).attr('href')
+        $.ajax({
+          method: "DELETE",
+          dataType: 'json',
+          beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+          url: url
+        })
+        .done(function(  ) {
+          $(event.target).closest('tbody').remove();
+        })
+      }
+      return false;
+    })
+  
+    $('.truncate').on('click', function(event) {
+      if($(event.target).closest('a').hasClass("text-truncate")) {
+        $(event.target).closest('a').removeClass("text-truncate");
+      }
+      else {
+        $(event.target).closest('a').addClass("text-truncate");
+      }
+    })
   })
 })
+
+
