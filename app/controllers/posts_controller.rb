@@ -25,8 +25,7 @@ class PostsController < ApplicationController
     if @post.update(edit_params)
       redirect_to posts_path, notice: 'Post successfully updated'
     else
-      posts
-      render action: :index, status: :unprocessable_entity
+      render action: :edit
     end
   end
 
