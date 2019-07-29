@@ -56,6 +56,6 @@ class PostsController < ApplicationController
   end
 
   def posts
-    @posts = current_user.posts.includes(:city, city: :weather).order(created_at: :desc)
+    @posts = current_user.posts.includes(:city, city: :weather).order(created_at: :desc).page(params[:page]).per(5)
   end
 end
