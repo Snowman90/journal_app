@@ -5,7 +5,7 @@ class CreatePostForm
 
   attr_accessor :note, :city_name, :user_id, :temperature
 
-  validates :note, presence: true, length: { maximum: 140 }
+  validates :note, presence: true, length: { maximum: 500 }
   validates :city_name, presence: true
   validates :user_id, presence: true
   validates_presence_of :temperature, message: "can't be read, provide valid city"

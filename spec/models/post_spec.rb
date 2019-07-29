@@ -12,13 +12,13 @@ RSpec.describe Post, type: :model do
     expect(post.valid?).to be_falsey
   end
 
-  it 'accepts note shorten that 140' do
-    post.note = 'That was fun'
+  it 'accepts note shorten or equal to 500' do
+    post.note = 'a' * 500
     expect(post.valid?).to be_truthy
   end
 
   it 'complains about too long note' do
-    post.note = 'a' * 141
+    post.note = 'a' * 501
     expect(post.valid?).to be_falsey
   end
 end
