@@ -40,6 +40,7 @@ gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 gem 'httparty', '~> 0.13.7'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

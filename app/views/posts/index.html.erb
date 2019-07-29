@@ -14,7 +14,6 @@
   </div>
 <% end %>
 
-
 <div class="col-md-6 offset-md-3">
   <h2>Older posts</h2>
   <table class="table">
@@ -40,4 +39,7 @@
       </tbody>
     <% end %>
   </table>
+  <div class="pagination">
+    <%= paginate @posts %>
+  </div>
 </div>
