@@ -1,5 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Weather, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:weather) { create(:weather) }
+
+  it 'requires temperature' do
+    weather.temperature = nil
+    expect(weather.valid?).to be_falsey
+  end
+
+  it 'accepts any temperature' do
+    weather.temperature = 21
+    expect(weather.valid?).to be_truthy
+  end
 end
