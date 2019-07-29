@@ -1,3 +1,7 @@
 class HomeController < ApplicationController
-  def show; end
+  def show
+    return unless user_signed_in?
+
+    @name = current_user.first_name
+  end
 end
