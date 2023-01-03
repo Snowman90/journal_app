@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
-gem 'httparty', '~> 0.13.7'
+gem 'httparty', '~> 0.21.0'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'kaminari'
